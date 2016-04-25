@@ -59,6 +59,14 @@
 			</div>
 			<md-button class="md-raised md-accent submit-button" type="submit" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine"  ng-click="login()">Đăng Nhập
        </md-button>
+       <div layout="row" layout-align="center center" layout-padding style="width: 100%;" flex>
+       		<div style="padding: 10px;">
+						<a href="#">Quen Mat Khau</a>
+					</div>
+					<div style="padding: 10px;" ng-show="user.type===2">
+						<a href="#">Tao Ho So Benh Nhan</a>
+					</div>
+				</div>
 		</form>
 	</div>
 </div>
