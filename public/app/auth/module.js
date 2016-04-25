@@ -25,6 +25,23 @@ define([
       data: {
         title: 'Login'
       }
+    }).state('app.register', {
+      url: '/register',
+      views: {
+        'content@app': {
+          templateUrl: 'app/auth/views/register.tpl.html',
+          controller:'RegisterCtrl',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'auth/controllers/register-ctrl',
+              'auth/directives/compare-pass'
+            ])
+          }
+        }
+      },
+      data: {
+        title: 'Register'
+      }
     });
   }]);
 

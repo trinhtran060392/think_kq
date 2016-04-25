@@ -1,0 +1,192 @@
+<div layout="row" flex layout-align="center center">
+	
+	<div flex="40" layout="column">
+		<form name="registerForm" layout="column" layout-align="center center">
+			
+			<h4>Tao Ho So Benh Nhan</h4>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;" flex="30">Tài Khoản* : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.account" type="text" placeholder="Tài Khoản" name="account" required="" minlength="6">
+			      <div ng-messages="registerForm.account.$error">
+	                <div ng-message-exp="['required', 'minlength']">
+		            Tai Khoan Khong Duoc Trong, It Nhat 6 Ky Tu.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Mật Khẩu* : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.pass" type="password" placeholder="Mật Khẩu" name="pass" required="" ng-minlength="6">
+			      <div ng-messages="registerForm.pass.$error">
+	                <div ng-message-exp="['required', 'minlength']">
+		            Mat Khau Khong Duoc Trong, It Nhat 6 Ky Tu.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Nhap Lai Mật Khẩu* : </div>
+				<md-input-container class="md-block" md-no-float flex>
+            <input type="password" name="repass"
+            ng-model="user.repass" placeholder="Mat Khau (Xac Nhan)" required="" compare-to="user.pass" minlength="6">
+               <div ng-messages="registerForm.repass.$error" role="alert" aria-live="assertive" >
+                  <div ng-message="required">
+                    <span>Mat Khau Xac Nhan Khong Duoc Trong</span>
+                  </div>
+                  <div ng-message="compareTo">
+                    <span>Mat Khau Khong Giong Nhau</span>
+                  </div>
+                  <div ng-message="minlength">
+                    <span>It Nhat 6 Ky Tu</span>
+                  </div>
+               </div>
+
+               <div class="md-errors-spacer">
+              </div>
+            </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Ten Benh Nhan* : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.name" type="text" placeholder="Mật Khẩu" name="name" required="">
+			      <div ng-messages="registerForm.name.$error">
+	                <div ng-message="required">
+		           Ten Khong Duoc Trong.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+				<div style="margin-bottom: 5px;"flex="30">Ngay Sinh* : </div>
+				<md-datepicker name="birthday" ng-model="user.date" md-placeholder="e. 6/3/1992"
+	          required
+	          >
+
+	         
+	       </md-datepicker>
+
+			     
+			</div>
+			
+			<div layout="row" layout-align="center center" layout-padding style="width: 100%;" flex>
+			<div style="margin-bottom: 5px;"flex="30">Gioi Tinh* : </div>
+				<md-radio-group layout="row" layout-align="center center" ng-model="user.gender" class="md-primary" flex>
+	        <md-radio-button flex="50"
+	                         ng-value="1">
+	            Nam
+	          
+	        </md-radio-button>
+	        <md-radio-button flex
+	                         ng-value="2">
+	            Nu<br/>
+	          
+	        </md-radio-button>
+	    </md-radio-group>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Email* : </div>
+			
+			    <md-input-container md-no-float class="md-block" flex>
+			     
+			      <input type="email" name="email" ng-model="user.email" placeholder="Email"  required="" ng-pattern="/^.+@.+\..+$/" />
+			      <div ng-messages="registerForm.email.$error">
+	                <div ng-message="required">
+		            Email Khong Duoc Trong.
+		          </div>
+              <div ng-message="pattern">
+		            <span>Email Sai Dinh Dang.</span>
+		          </div>
+              </div>
+             
+			    </md-input-container>
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Dia Chi : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.address" type="text" placeholder="Dia Chi" name="address">
+			      
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">SDT : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.sdt" type="text" placeholder="SDT" name="sdt" ng-pattern="/^(?:\(([0-9]{3})\)|([0-9]{3}))[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/">
+			     <div ng-messages="registerForm.sdt.$error">
+	                <div ng-message="pattern">
+		            SDT SAI DINH DANG.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Cong Viec : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.job" type="text" placeholder="Cong Viec" name="job">
+			     
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Chieu Cao : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.height" type="text" placeholder="Chieu Cao" name="height">
+			      
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;"flex="30">Can Nang : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.weight" type="text" placeholder="Can Nang" name="weight">
+			     
+			    </md-input-container>
+
+			     
+			</div>
+			<md-button class="md-raised md-accent submit-button" type="submit" aria-label="LOG IN" ng-disabled="registerForm.$invalid || registerForm.$pristine"  ng-click="register()">Tao Ho So Benh Nhan
+       </md-button>
+       
+		</form>
+	</div>
+</div>
