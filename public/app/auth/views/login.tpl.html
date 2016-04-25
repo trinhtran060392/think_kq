@@ -1,0 +1,64 @@
+<div layout="row" flex layout-align="center center">
+	
+	<div flex="40" layout="column">
+		<form name="loginForm" layout="column" layout-align="center center">
+			<div layout layout-align="center center">
+				<div>
+				<img src="../styles/img/logo.png" width="100px" height="100px">
+				</div>
+			</div>
+			<h4>Hệ Thống Chăm Sóc Sức Khỏe</h4>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;">Tài Khoản : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.name" type="text" placeholder="Tài Khoản" name="account" required="" minlength="6">
+			      <div ng-messages="loginForm.account.$error">
+	                <div ng-message-exp="['required', 'minlength']">
+		            Tai Khoan Khong Duoc Trong, It Nhat 6 Ky Tu.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div style="margin-bottom: 5px;">Mật Khẩu : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.pass" type="text" placeholder="Mật Khẩu" name="pass" required="" ng-minlength="6">
+			      <div ng-messages="loginForm.pass.$error">
+	                <div ng-message-exp="['required', 'minlength']">
+		            Mat Khau Khong Duoc Trong, It Nhat 6 Ky Tu.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="center center" layout-padding style="width: 100%;" flex>
+
+				<md-radio-group layout="row" layout-align="center center" ng-model="user.type" class="md-primary" flex>
+	        <md-radio-button flex="50"
+	                         ng-value="1">
+	            Bac Si
+	          
+	        </md-radio-button>
+	        <md-radio-button flex
+	                         ng-value="2">
+	            Benh Nhan<br/>
+	          
+	        </md-radio-button>
+	    </md-radio-group>
+
+			     
+			</div>
+			<md-button class="md-raised md-accent submit-button" type="submit" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine"  ng-click="login()">Đăng Nhập
+       </md-button>
+		</form>
+	</div>
+</div>

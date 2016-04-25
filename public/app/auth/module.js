@@ -6,18 +6,24 @@ define([
 ], function (ng, couchPotato) {
   'use strict';
 
-  var module = ng.module('app.dashboard', ['ui.router', 'ngMessages']);
+  var module = ng.module('app.auth', ['ui.router', 'ngMessages']);
 
   module.config(['$stateProvider', '$couchPotatoProvider', function ($stateProvider, $couchPotatoProvider) {
-    $stateProvider.state('app.dashboard', {
-      url: '/dashboard',
+    $stateProvider.state('app.login', {
+      url: '/login',
       views: {
         'content@app': {
-          templateUrl: 'app/dashboard/views/dashboard.tpl.html'
+          templateUrl: 'app/auth/views/login.tpl.html',
+          controller:'LoginCtrl',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'auth/controllers/login-ctrl'
+            ])
+          }
         }
       },
       data: {
-        title: 'Dashboard'
+        title: 'Login'
       }
     });
   }]);

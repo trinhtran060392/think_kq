@@ -12,7 +12,7 @@ define([
     'ngMessages',
     'ui.router',
     'app.layout',
-    'app.dashboard'
+    'app.auth'
   ]);
 
   couchPotato.configureApp(app);

@@ -1,6 +1,6 @@
 define([
   'layout/module',
-  'dashboard/module'
+  'auth/module'
 ], function() {
   'use strict';
 })

@@ -24,7 +24,7 @@ define([
 
     $urlRouterProvider.otherwise(function ($injector, $location) {
       var $state = $injector.get('$state');
-      $state.go('app.dashboard');
+      $state.go('app.login');
     });
   }])
 
