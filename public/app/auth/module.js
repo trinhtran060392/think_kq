@@ -42,6 +42,23 @@ define([
       data: {
         title: 'Register'
       }
+    }).state('app.recover', {
+      url: '/recover',
+      views: {
+        'content@app': {
+          templateUrl: 'app/auth/views/recover-pass.tpl.html',
+          controller:'RecoverCtrl',
+          resolve: {
+            deps: $couchPotatoProvider.resolveDependencies([
+              'auth/controllers/recover-pass-ctrl'
+              
+            ])
+          }
+        }
+      },
+      data: {
+        title: 'Register'
+      }
     });
   }]);
 

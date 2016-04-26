@@ -1,0 +1,46 @@
+<div layout="row" flex layout-align="center center">
+	
+	<div flex="40" layout="column" class="border-recover-form">
+		<form name="recoverForm" layout="column" layout-align="center center" class="recover-form">
+			
+			<h4>Quen Mat Khau</h4>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div class="input-margin-bottom" flex="30">Ten Tai Khoan : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input ng-model="user.account" type="text" placeholder="Tài Khoản" name="account" required="" minlength="6">
+			      <div ng-messages="recoverForm.account.$error">
+	                <div ng-message-exp="['required', 'minlength']">
+		            Tai Khoan Khong Duoc Trong, It Nhat 6 Ky Tu.
+		          </div>
+              
+              </div>
+			    </md-input-container>
+
+			     
+			</div>
+			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
+
+				<div class="input-margin-bottom" flex="30">Email : </div>
+				<md-input-container md-no-float class="md-block" flex>
+			     
+			      <input type="email" name="email" ng-model="user.email" placeholder="Email"  required="" ng-pattern="/^.+@.+\..+$/">
+			       <div ng-messages="recoverForm.email.$error">
+	                <div ng-message-exp="['required', 'pattern']">
+		            Email Khong Duoc Trong, Phai Dung Dinh Dang.
+		          </div>
+              
+              </div>
+             
+			    </md-input-container>
+
+			     
+			</div>
+			
+			<md-button class="md-raised md-accent submit-button" type="submit" aria-label="Gui Yeu Cau" ng-disabled="recoverForm.$invalid || recoverForm.$pristine"  ng-click="send()" class="recover-button-margin-bottom">Gui Yeu Cau
+       </md-button>
+       
+		</form>
+	</div>
+</div>

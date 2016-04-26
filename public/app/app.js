@@ -4,7 +4,8 @@ define([
   'angular',
   'angular-couch-potato',
   'angular-ui-router',
-  'angular-material'
+  'angular-material',
+  'angular-messages'
 ], function (ng, couchPotato) {
   var app = ng.module('app', [
     'scs.couch-potato',

@@ -1,6 +1,6 @@
 <div layout="row" flex layout-align="center center">
 	
-	<div flex="40" layout="column">
+	<div flex="40" layout="column" class="margin-top-20">
 		<form name="loginForm" layout="column" layout-align="center center">
 			<div layout layout-align="center center">
 				<div>
@@ -10,7 +10,7 @@
 			<h4>Hệ Thống Chăm Sóc Sức Khỏe</h4>
 			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
 
-				<div style="margin-bottom: 5px;">Tài Khoản : </div>
+				<div class="input-margin-bottom">Tài Khoản : </div>
 				<md-input-container md-no-float class="md-block" flex>
 			     
 			      <input ng-model="user.name" type="text" placeholder="Tài Khoản" name="account" required="" minlength="6">
@@ -26,7 +26,7 @@
 			</div>
 			<div layout="row" layout-align="start center" layout-padding flex style="width: 100%;">
 
-				<div style="margin-bottom: 5px;">Mật Khẩu : </div>
+				<div class="input-margin-bottom">Mật Khẩu : </div>
 				<md-input-container md-no-float class="md-block" flex>
 			     
 			      <input ng-model="user.pass" type="text" placeholder="Mật Khẩu" name="pass" required="" ng-minlength="6">
@@ -59,9 +59,9 @@
 			</div>
 			<md-button class="md-raised md-accent submit-button" type="submit" aria-label="LOG IN" ng-disabled="loginForm.$invalid || loginForm.$pristine"  ng-click="login()">Đăng Nhập
        </md-button>
-       <div layout="row" layout-align="center center" layout-padding style="width: 100%;" flex>
+       <div layout="row" layout-align="center center" class="submit-button-margin-bottom" layout-padding style="width: 100%;" flex>
        		<div style="padding: 10px;">
-						<a href="#">Quen Mat Khau</a>
+						<a ui-sref="app.recover" href="#">Quen Mat Khau</a>
 					</div>
 					<div style="padding: 10px;" ng-show="user.type===2">
 						<a ui-sref="app.register">Tao Ho So Benh Nhan</a>
